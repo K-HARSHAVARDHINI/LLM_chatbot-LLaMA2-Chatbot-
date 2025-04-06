@@ -1,0 +1,49 @@
+# --- Core Frameworks ---
+fastapi==0.110.1            # Backend API server
+uvicorn==0.29.0             # ASGI server for FastAPI
+streamlit==1.33.0           # Frontend UI
+
+# --- Data Handling & Parsing ---
+pydantic==2.6.4             # Data validation and parsing (used with FastAPI)
+requests==2.31.0            # Handling HTTP requests (e.g., OpenAI API)
+python-dotenv==1.0.1        # For managing environment variables from .env
+
+# --- LLM Integration ---
+openai==1.14.2              # OpenAI GPT API for natural language to SQL and rephrasing
+sentence-transformers==2.6.1 # Optional, for embeddings if used in RAG-style or FAQ search
+
+# --- Database ---
+sqlalchemy==2.0.29          # ORM for working with the SQLite database
+sqlite3-binary              # Needed only for platforms missing built-in sqlite3 (optional)
+
+# --- ML & NLP Utilities (Optional for FAQ vector similarity) ---
+scikit-learn==1.4.1.post1   # Cosine similarity, clustering, etc.
+numpy==1.26.4               # Used by scikit-learn and transformers
+
+# --- Optional (only if using HuggingFace transformers or local LLMs) ---
+# transformers==4.39.3
+# torch==2.2.2
+
+
+
+✅ Tools Used in Detail
+
+🗂️ Category       |	  🛠️ Library/Tool                   |	📌 Purpose
+----------------------------------------------------------------------------------
+🧠 LLM API        | openai	                             |Converts natural language queries into SQL and rephrases SQL responses
+
+🌐 Backend API    | fastapi, uvicorn	                     |Handles chat requests via a lightweight and fast API server
+
+🎨 Frontend UI    |streamlit	                             |Creates an interactive web interface for chatting with the bot
+
+🧮 DB Interface	  |sqlalchemy	                             |ORM for interacting with database tables like product_info, order_status
+
+📄 Env Handling	  |python-dotenv	                     |Manages secret keys and configs via .env file
+
+🗃️ Storage	  |sqlite3-binary	                     |Lightweight local SQL database for testing and storage
+
+🧾 Validation	  |pydantic	                             |Validates and parses data for API request/response models
+
+🔍 NLP / ML	  |sentence-transformers, scikit-learn, numpy|(Optional) For embeddings, similarity matching, or intent detection
+
+🌐 HTTP Client	  |requests	                             |Makes API calls to OpenAI or other external services
